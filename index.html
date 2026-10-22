@@ -11,6 +11,46 @@
     body {
       font-family: 'Inter', sans-serif;
     }
+
+    .flip-card {
+      perspective: 1200px;
+    }
+
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 250px;
+      transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+      transform-style: preserve-3d;
+    }
+
+    .flip-card.flipped .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .flip-card-front, .flip-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      border-radius: 0.85rem;
+      overflow: hidden;
+    }
+
+    .flip-card-back {
+      transform: rotateY(180deg);
+    }
+
+    .cert-frame {
+      border: 6px solid #1e40af;
+      background: #ffffff;
+    }
+
+    .cert-frame-edunet {
+      border: 6px solid #dc2626;
+      background: #ffffff;
+    }
   </style>
 </head>
 <body class="bg-slate-50 text-slate-800 antialiased selection:bg-slate-200">
@@ -21,9 +61,10 @@
         <span class="text-xl font-bold tracking-tight text-slate-900">Ronit Garg</span>
         <nav class="hidden md:flex space-x-8 text-sm font-medium text-slate-600">
           <a href="#about" class="hover:text-slate-900 transition">About</a>
+          <a href="#projects" class="hover:text-slate-900 transition">Projects</a>
+          <a href="#certifications" class="hover:text-slate-900 transition">Certifications</a>
           <a href="#profiles" class="hover:text-slate-900 transition">Profiles</a>
           <a href="#skills" class="hover:text-slate-900 transition">Skills</a>
-          <a href="#placement" class="hover:text-slate-900 transition">Placement Focus</a>
           <a href="#education" class="hover:text-slate-900 transition">Education</a>
         </nav>
       </div>
@@ -34,9 +75,7 @@
 
     <section id="about" class="bg-white border border-slate-200 rounded-2xl p-6 md:p-10 shadow-sm">
       <div class="flex flex-col md:flex-row items-center gap-8">
-  
         <div class="w-48 h-56 flex-shrink-0 bg-slate-100 border border-slate-300 rounded-xl overflow-hidden shadow-inner flex items-center justify-center text-slate-400 relative">
-    
           <img src="profile_photo.jpg" alt="Ronit Garg" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Ronit+Garg&size=200&background=0f172a&color=fff';">
         </div>
 
@@ -65,6 +104,323 @@
             </a>
           </div>
         </div>
+      </div>
+    </section>
+
+    <section id="projects" class="space-y-6">
+      <h2 class="text-2xl font-bold text-slate-900 border-l-4 border-slate-900 pl-3">Featured Projects</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+        <div class="bg-white border border-slate-200 rounded-xl p-6 flex flex-col justify-between hover:shadow-md hover:border-slate-300 transition">
+          <div class="space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="px-2.5 py-0.5 rounded-md text-xs font-semibold bg-blue-50 text-blue-700 border border-blue-200">Web App</span>
+              <i class="fa-solid fa-book text-slate-400"></i>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900">Online Bookstore Platform</h3>
+            <p class="text-slate-600 text-sm leading-relaxed">
+              A responsive e-commerce web platform for browsing books, viewing catalog details, filtering categories, and managing user selection interfaces.
+            </p>
+            <div class="flex flex-wrap gap-1.5 pt-1">
+              <span class="px-2 py-0.5 bg-slate-100 text-slate-700 text-xs font-medium rounded">HTML5</span>
+              <span class="px-2 py-0.5 bg-slate-100 text-slate-700 text-xs font-medium rounded">CSS3</span>
+              <span class="px-2 py-0.5 bg-slate-100 text-slate-700 text-xs font-medium rounded">JavaScript</span>
+              <span class="px-2 py-0.5 bg-slate-100 text-slate-700 text-xs font-medium rounded">Vercel</span>
+            </div>
+          </div>
+          <div class="pt-6 flex items-center gap-3">
+            <a href="https://bookstore-csitf-2.vercel.app/" target="_blank" class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-slate-900 text-white text-xs font-medium rounded-md hover:bg-slate-800 transition">
+              Live Demo <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+            </a>
+            <a href="https://github.com/ronitgrg/BookStore" target="_blank" class="inline-flex items-center gap-1.5 px-3 py-1.5 border border-slate-300 text-slate-700 text-xs font-medium rounded-md hover:bg-slate-100 transition">
+              <i class="fa-brands fa-github text-sm"></i> Code
+            </a>
+          </div>
+        </div>
+
+        <div class="bg-white border border-slate-200 rounded-xl p-6 flex flex-col justify-between hover:shadow-md hover:border-slate-300 transition">
+          <div class="space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="px-2.5 py-0.5 rounded-md text-xs font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200">Productivity Tool</span>
+              <i class="fa-solid fa-list-check text-slate-400"></i>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900">Exam Prep Tracker</h3>
+            <p class="text-slate-600 text-sm leading-relaxed">
+              A structured study roadmap & task tracker web application designed to help university students track AKTU syllabus units, daily DSA targets, and revision cycles.
+            </p>
+            <div class="flex flex-wrap gap-1.5 pt-1">
+              <span class="px-2 py-0.5 bg-slate-100 text-slate-700 text-xs font-medium rounded">HTML5</span>
+              <span class="px-2 py-0.5 bg-slate-100 text-slate-700 text-xs font-medium rounded">CSS3</span>
+              <span class="px-2 py-0.5 bg-slate-100 text-slate-700 text-xs font-medium rounded">JavaScript</span>
+              <span class="px-2 py-0.5 bg-slate-100 text-slate-700 text-xs font-medium rounded">Vercel</span>
+            </div>
+          </div>
+          <div class="pt-6 flex items-center gap-3">
+            <a href="https://exam-preparation-and-tracking-guide.vercel.app/" target="_blank" class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-slate-900 text-white text-xs font-medium rounded-md hover:bg-slate-800 transition">
+              Live Demo <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+            </a>
+            <a href="https://github.com/ronitgrg/Exam-Preparation-and-tracking-guide" target="_blank" class="inline-flex items-center gap-1.5 px-3 py-1.5 border border-slate-300 text-slate-700 text-xs font-medium rounded-md hover:bg-slate-100 transition">
+              <i class="fa-brands fa-github text-sm"></i> Code
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="certifications" class="space-y-6">
+      <div class="flex items-center justify-between">
+        <h2 class="text-2xl font-bold text-slate-900 border-l-4 border-slate-900 pl-3">Certifications & Training</h2>
+        <span class="text-xs font-medium text-indigo-600 bg-indigo-50 px-2.5 py-1 rounded-full border border-indigo-100 flex items-center gap-1.5">
+          <i class="fa-solid fa-rotate text-indigo-500 animate-spin"></i> Click card to 360° flip details
+        </span>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <div class="flip-card cursor-pointer" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front cert-frame p-4 shadow-sm hover:shadow-md transition flex flex-col justify-between text-slate-900">
+              <div class="flex items-start justify-between border-b border-slate-200 pb-2">
+                <div class="text-[10px] text-slate-600 leading-tight">
+                  <p class="italic">In recognition of the commitment to achieve</p>
+                  <p class="font-bold text-slate-800">professional excellence</p>
+                </div>
+                <span class="text-[9px] font-bold text-indigo-700 border border-indigo-200 px-1.5 py-0.5 rounded bg-indigo-50">IBM SkillsBuild</span>
+              </div>
+              
+              <div class="my-auto py-1">
+                <h4 class="text-lg font-bold text-slate-900 tracking-tight">Ronit Garg</h4>
+                <p class="text-[10px] text-slate-500">Has successfully satisfied the requirements for:</p>
+                <p class="text-xs font-bold text-blue-900 mt-1 border-t border-blue-100 pt-1">Getting Started with Artificial Intelligence</p>
+              </div>
+
+              <div class="flex items-end justify-between border-t border-slate-200 pt-2 text-[9px] text-slate-600">
+                <div>
+                  <p><strong>Issued on:</strong> Aug 18, 2026</p>
+                  <p><strong>Issued by:</strong> IBM SkillsBuild</p>
+                </div>
+                <div class="text-right">
+                  <span class="text-indigo-600 font-bold text-[10px]">IBM</span>
+                  <p class="text-[8px] text-slate-400">Click to flip details</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="flip-card-back bg-slate-900 text-white border border-slate-800 p-5 shadow-lg flex flex-col justify-between">
+              <div class="space-y-2">
+                <div class="flex items-center justify-between border-b border-slate-800 pb-2">
+                  <span class="text-xs font-bold text-indigo-400 uppercase tracking-wider">Course Details</span>
+                  <span class="text-xs text-slate-400">Aug 18, 2026</span>
+                </div>
+                <h4 class="font-bold text-sm text-white">Getting Started with Artificial Intelligence</h4>
+                <p class="text-xs text-slate-300 leading-relaxed">
+                  Covered core AI principles, Neural Networks, Machine Learning workflows, and ethics in AI applications.
+                </p>
+                <div class="text-[11px] text-slate-400 space-y-1 pt-1">
+                  <p><strong>Issuer:</strong> IBM SkillsBuild</p>
+                  <p><strong>Credential:</strong> Verified Badge</p>
+                </div>
+              </div>
+              <div class="pt-3 border-t border-slate-800 flex items-center justify-between">
+                <a href="https://www.credly.com/badges/0bdc6c38-ca58-42ab-9755-12e8e8ae22a7" target="_blank" onclick="event.stopPropagation();" class="text-xs font-medium text-emerald-400 hover:text-emerald-300 inline-flex items-center gap-1">
+                  Verify Badge <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                </a>
+                <span class="text-[10px] text-slate-500"><i class="fa-solid fa-rotate-left mr-1"></i>Click to Flip back</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flip-card cursor-pointer" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front cert-frame-edunet p-4 shadow-sm hover:shadow-md transition flex flex-col justify-between text-slate-900">
+              <div class="flex items-center justify-between border-b border-slate-200 pb-2">
+                <span class="text-[10px] font-bold text-red-600">VOIS & Edunet Foundation</span>
+                <span class="text-[9px] bg-emerald-50 text-emerald-700 px-1.5 py-0.5 rounded font-bold border border-emerald-200">VERIFIED</span>
+              </div>
+              
+              <div class="my-auto py-1">
+                <p class="text-[10px] uppercase tracking-wider text-slate-400">Certificate of Completion</p>
+                <h4 class="text-lg font-bold text-slate-900">Ronit Garg</h4>
+                <p class="text-[10px] text-slate-500">For successful completion of:</p>
+                <p class="text-xs font-bold text-red-800 mt-1 border-t border-red-100 pt-1">Basics of Linux Operating System</p>
+              </div>
+
+              <div class="flex items-end justify-between border-t border-slate-200 pt-2 text-[9px] text-slate-600">
+                <div>
+                  <p><strong>Issued on:</strong> Aug 19, 2026</p>
+                  <p><strong>Cert ID:</strong> VFLMS26_168472</p>
+                </div>
+                <p class="text-[8px] text-slate-400">Click to flip details</p>
+              </div>
+            </div>
+
+            <div class="flip-card-back bg-slate-900 text-white border border-slate-800 p-5 shadow-lg flex flex-col justify-between">
+              <div class="space-y-2">
+                <div class="flex items-center justify-between border-b border-slate-800 pb-2">
+                  <span class="text-xs font-bold text-red-400 uppercase tracking-wider">Course Details</span>
+                  <span class="text-xs text-slate-400">Aug 19, 2026</span>
+                </div>
+                <h4 class="font-bold text-sm text-white">Basics of Linux OS</h4>
+                <p class="text-xs text-slate-300 leading-relaxed">
+                  Mastered Linux CLI bash commands, file system hierarchy, permissions, process management, and shell scripting basics.
+                </p>
+                <div class="text-[11px] text-slate-400 space-y-1 pt-1">
+                  <p><strong>Provider:</strong> VOIS & Edunet Foundation</p>
+                  <p><strong>Cert ID:</strong> VFLMS26_168472</p>
+                </div>
+              </div>
+              <div class="pt-3 border-t border-slate-800 flex items-center justify-between">
+                <span class="text-xs text-emerald-400 font-medium"><i class="fa-solid fa-check-double mr-1"></i>Verified Certificate</span>
+                <span class="text-[10px] text-slate-500"><i class="fa-solid fa-rotate-left mr-1"></i>Click to Flip back</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flip-card cursor-pointer" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front cert-frame-edunet p-4 shadow-sm hover:shadow-md transition flex flex-col justify-between text-slate-900">
+              <div class="flex items-center justify-between border-b border-slate-200 pb-2">
+                <span class="text-[10px] font-bold text-red-600">VOIS & Edunet Foundation</span>
+                <span class="text-[9px] bg-emerald-50 text-emerald-700 px-1.5 py-0.5 rounded font-bold border border-emerald-200">VERIFIED</span>
+              </div>
+              
+              <div class="my-auto py-1">
+                <p class="text-[10px] uppercase tracking-wider text-slate-400">Certificate of Completion</p>
+                <h4 class="text-lg font-bold text-slate-900">Ronit Garg</h4>
+                <p class="text-[10px] text-slate-500">For successful completion of:</p>
+                <p class="text-xs font-bold text-red-800 mt-1 border-t border-red-100 pt-1">Introduction to Full-Stack Web Development</p>
+              </div>
+
+              <div class="flex items-end justify-between border-t border-slate-200 pt-2 text-[9px] text-slate-600">
+                <div>
+                  <p><strong>Issued on:</strong> Aug 23, 2026</p>
+                  <p><strong>Cert ID:</strong> VFLMS26_168472</p>
+                </div>
+                <p class="text-[8px] text-slate-400">Click to flip details</p>
+              </div>
+            </div>
+
+            <div class="flip-card-back bg-slate-900 text-white border border-slate-800 p-5 shadow-lg flex flex-col justify-between">
+              <div class="space-y-2">
+                <div class="flex items-center justify-between border-b border-slate-800 pb-2">
+                  <span class="text-xs font-bold text-red-400 uppercase tracking-wider">Course Details</span>
+                  <span class="text-xs text-slate-400">Aug 23, 2026</span>
+                </div>
+                <h4 class="font-bold text-sm text-white">Full-Stack Web Development</h4>
+                <p class="text-xs text-slate-300 leading-relaxed">
+                  Frontend & backend architecture basics, HTML5/CSS3 layouts, JavaScript DOM manipulation, and responsive web design patterns.
+                </p>
+                <div class="text-[11px] text-slate-400 space-y-1 pt-1">
+                  <p><strong>Provider:</strong> VOIS & Edunet Foundation</p>
+                  <p><strong>Cert ID:</strong> VFLMS26_168472</p>
+                </div>
+              </div>
+              <div class="pt-3 border-t border-slate-800 flex items-center justify-between">
+                <span class="text-xs text-emerald-400 font-medium"><i class="fa-solid fa-check-double mr-1"></i>Verified Certificate</span>
+                <span class="text-[10px] text-slate-500"><i class="fa-solid fa-rotate-left mr-1"></i>Click to Flip back</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flip-card cursor-pointer" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front cert-frame-edunet p-4 shadow-sm hover:shadow-md transition flex flex-col justify-between text-slate-900">
+              <div class="flex items-center justify-between border-b border-slate-200 pb-2">
+                <span class="text-[10px] font-bold text-red-600">VOIS & Edunet Foundation</span>
+                <span class="text-[9px] bg-emerald-50 text-emerald-700 px-1.5 py-0.5 rounded font-bold border border-emerald-200">VERIFIED</span>
+              </div>
+              
+              <div class="my-auto py-1">
+                <p class="text-[10px] uppercase tracking-wider text-slate-400">Certificate of Completion</p>
+                <h4 class="text-lg font-bold text-slate-900">Ronit Garg</h4>
+                <p class="text-[10px] text-slate-500">For successful completion of:</p>
+                <p class="text-xs font-bold text-red-800 mt-1 border-t border-red-100 pt-1">Introduction to Generative AI</p>
+              </div>
+
+              <div class="flex items-end justify-between border-t border-slate-200 pt-2 text-[9px] text-slate-600">
+                <div>
+                  <p><strong>Issued on:</strong> Aug 23, 2026</p>
+                  <p><strong>Cert ID:</strong> VFLMS26_168472</p>
+                </div>
+                <p class="text-[8px] text-slate-400">Click to flip details</p>
+              </div>
+            </div>
+
+            <div class="flip-card-back bg-slate-900 text-white border border-slate-800 p-5 shadow-lg flex flex-col justify-between">
+              <div class="space-y-2">
+                <div class="flex items-center justify-between border-b border-slate-800 pb-2">
+                  <span class="text-xs font-bold text-red-400 uppercase tracking-wider">Course Details</span>
+                  <span class="text-xs text-slate-400">Aug 23, 2026</span>
+                </div>
+                <h4 class="font-bold text-sm text-white">Introduction to Generative AI</h4>
+                <p class="text-xs text-slate-300 leading-relaxed">
+                  Explored LLMs, Foundation Models, Prompt Engineering, Text & Image Generation concepts, and GenAI use cases.
+                </p>
+                <div class="text-[11px] text-slate-400 space-y-1 pt-1">
+                  <p><strong>Provider:</strong> VOIS & Edunet Foundation</p>
+                  <p><strong>Cert ID:</strong> VFLMS26_168472</p>
+                </div>
+              </div>
+              <div class="pt-3 border-t border-slate-800 flex items-center justify-between">
+                <span class="text-xs text-emerald-400 font-medium"><i class="fa-solid fa-check-double mr-1"></i>Verified Certificate</span>
+                <span class="text-[10px] text-slate-500"><i class="fa-solid fa-rotate-left mr-1"></i>Click to Flip back</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flip-card cursor-pointer" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front cert-frame-edunet p-4 shadow-sm hover:shadow-md transition flex flex-col justify-between text-slate-900">
+              <div class="flex items-center justify-between border-b border-slate-200 pb-2">
+                <span class="text-[10px] font-bold text-red-600">VOIS & Edunet Foundation</span>
+                <span class="text-[9px] bg-emerald-50 text-emerald-700 px-1.5 py-0.5 rounded font-bold border border-emerald-200">VERIFIED</span>
+              </div>
+              
+              <div class="my-auto py-1">
+                <p class="text-[10px] uppercase tracking-wider text-slate-400">Certificate of Completion</p>
+                <h4 class="text-lg font-bold text-slate-900">Ronit Garg</h4>
+                <p class="text-[10px] text-slate-500">For successful completion of:</p>
+                <p class="text-xs font-bold text-red-800 mt-1 border-t border-red-100 pt-1">Introduction to Machine Learning</p>
+              </div>
+
+              <div class="flex items-end justify-between border-t border-slate-200 pt-2 text-[9px] text-slate-600">
+                <div>
+                  <p><strong>Issued on:</strong> Aug 23, 2026</p>
+                  <p><strong>Cert ID:</strong> VFLMS26_168472</p>
+                </div>
+                <p class="text-[8px] text-slate-400">Click to flip details</p>
+              </div>
+            </div>
+
+            <div class="flip-card-back bg-slate-900 text-white border border-slate-800 p-5 shadow-lg flex flex-col justify-between">
+              <div class="space-y-2">
+                <div class="flex items-center justify-between border-b border-slate-800 pb-2">
+                  <span class="text-xs font-bold text-red-400 uppercase tracking-wider">Course Details</span>
+                  <span class="text-xs text-slate-400">Aug 23, 2026</span>
+                </div>
+                <h4 class="font-bold text-sm text-white">Introduction to Machine Learning</h4>
+                <p class="text-xs text-slate-300 leading-relaxed">
+                  Supervised vs Unsupervised learning algorithms, Regression, Classification concepts, and data preprocessing workflows.
+                </p>
+                <div class="text-[11px] text-slate-400 space-y-1 pt-1">
+                  <p><strong>Provider:</strong> VOIS & Edunet Foundation</p>
+                  <p><strong>Cert ID:</strong> VFLMS26_168472</p>
+                </div>
+              </div>
+              <div class="pt-3 border-t border-slate-800 flex items-center justify-between">
+                <span class="text-xs text-emerald-400 font-medium"><i class="fa-solid fa-check-double mr-1"></i>Verified Certificate</span>
+                <span class="text-[10px] text-slate-500"><i class="fa-solid fa-rotate-left mr-1"></i>Click to Flip back</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
 
@@ -98,7 +454,6 @@
           </div>
           <span class="text-xs font-medium text-slate-600 flex items-center gap-1">View Repositories <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i></span>
         </a>
-
 
         <a href="https://www.codechef.com/users/ronitgrg" target="_blank" class="block bg-white border border-slate-200 p-5 rounded-xl hover:border-slate-400 hover:shadow-md transition">
           <div class="flex items-center gap-3 mb-3">
